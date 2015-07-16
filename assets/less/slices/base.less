@@ -1,0 +1,113 @@
+@url: 'https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic';
+
+@link-color: #f6a03a;
+@link-color-hover: lighten(@link-color, 50%);
+
+@blue: #0063ae;
+
+body {
+    -webkit-font-smoothing: antialiased;
+    line-height: 32px;
+    font-size: 20px;
+    color: #454054;
+    font-weight: 300;
+}
+section, header, footer, main, article, nav, aside { position: relative; }
+a {
+    outline: none !important;
+    text-decoration: none !important;
+    color: @link-color;
+    transition: all 225ms ease;
+
+    &a:hover,
+    &a:focus {
+        color: @link-color-hover;
+    }
+}
+p { margin-bottom: 18px; }
+h1, .h1 {
+    font-size: 50px;
+    font-weight: 400;
+    position: relative;
+    background: @blue;
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 150px;
+    text-align: left;
+    padding-left: 20px;
+    color: #fff !important;
+
+}
+h2, .h2 {
+
+}
+h3, .h3 {
+
+}
+h4, .h4 {
+
+}
+label{
+    font-size: 16px;
+    font-weight: 500;
+    color: @blue;
+}
+.button {
+    -moz-appearance: button;
+    /* Firefox */
+    -webkit-appearance: button;
+    /* Safari and Chrome */
+    padding: 10px;
+    margin: 10px;
+    width: 70px;
+}
+.drop-box {
+    background: #F8F8F8;
+    border: 5px dashed #DDD;
+    width: 200px;
+    height: 65px;
+    text-align: center;
+    padding-top: 25px;
+    margin: 10px;
+    cursor: pointer;
+}
+.dragover {
+    border: 5px dashed blue;
+}
+body {
+  margin: 20px;
+}
+
+.formly-field {
+  margin-bottom: 16px;
+}
+
+.formly.row, .formly.row .formly-field {
+  margin-bottom: 0;
+}
+
+.formly.row .formly-field:first-child {
+  padding-left: 0;
+}
+
+.formly.row .formly-field:nth-last-child(2) {
+  padding-right: 0;
+}
+
+.formly-field-group ng-form {
+  margin: 0;
+}
+
+.formly-field-group {
+  margin: 0;
+}
+input{
+      border-radius: 0px !important;
+}
+.form-control{
+    border-radius: 0px !important;
+    background-color: #F7F7F7;
+}
+select{
+    border-radius: 0px !important;
+}

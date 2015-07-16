@@ -1,0 +1,76 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Kickoff Brief</title>
+
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="build/style.css">
+    <!-- Application Dependencies -->
+    <script src="node_modules/api-check/dist/api-check.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-formly/dist/formly.js"></script>
+    <script src="node_modules/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="scripts/ng-file-upload.js"></script>
+    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="jib3pu5hsnzcjea"></script>
+</head>
+<body ng-app="formlyApp" ng-controller="MainController as vm">
+
+    <div class="container col-md-10 col-md-offset-1">
+
+        <form novalidate>
+            <h1>Project Kickoff Brief</h1>
+            <formly-form model="vm.model" fields="vm.field" form="vm.form">
+                <button type="submit" class="btn btn-primary" ng-disabled="vm.form.$invalid">Submit</button>
+            </formly-form>
+        </form>
+
+
+        <script type="text/ng-template" id="repeatSection.html">
+          <div>
+            <div class="{{hideRepeat}}">
+              <div class="repeatsection" ng-repeat="element in model[options.key]" ng-init="fields = copyFields(to.fields)">
+                <formly-form
+                     fields="fields"
+                     model="element"
+                     bind-name="'formly_ng_repeat' + index + $parent.$index">
+                </formly-form>
+                <div style="margin-bottom:20px;">
+                  <button type="button" class="btn btn-sm btn-danger" ng-click="model[options.key].splice($index, 1)">
+                    Remove
+                  </button>
+                </div>
+                <hr>
+            </div>
+            <p class="AddNewButton">
+              <button type="button" class="btn btn-primary" ng-click="addNew()" >{{to.btnText}}</button>
+            </p>
+          </div>
+        </script>
+
+        <script type="text/ng-template" id="upload.html">
+            <div class="button" ngf-select ng-model="files" ngf-multiple="multiple">Select File</div>
+            Files:
+            <ul>
+                <li ng-repeat="f in files" style="font:smaller">{{f.name}}</li>
+            </ul>
+        </script>
+
+
+
+
+    </div>
+
+</body>
+
+
+    <!-- Application Scripts -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="scripts/MainController.js"></script>
+    <script src="scripts/province.js"></script>
+    <script type="text/javascript" src="build/scripts.min.js"></script>"></script>
+</html>
